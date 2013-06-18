@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditTipoDocumentoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+          <p:growl id="msgs" showDetail="false" sticky="false" life="4000"/>
+            <h:form id="formulario">
+                <center>
+                <h:panelGrid columns="3">            
+                    <h:outputLabel value="#{bundle.CreateTipoDocumentoLabel_idTipoDocumento}" for="idTipoDocumento" />
+                    <p:inputText id="idTipoDocumento" value="#{tipoDocumentoController.selected.idTipoDocumento}" title="#{bundle.CreateTipoDocumentoTitle_idTipoDocumento}" required="true" requiredMessage="#{bundle.CreateTipoDocumentoRequiredMessage_idTipoDocumento}"/>
+                    <p:message id="idTipoDocumento" for="idTipoDocumento" />
+                    <h:outputLabel value="#{bundle.CreateTipoDocumentoLabel_nombreTipoDocumento}" for="nombreTipoDocumento" />
+                    <p:inputText id="nombreTipoDocumento" value="#{tipoDocumentoController.selected.nombreTipoDocumento}" title="#{bundle.CreateTipoDocumentoTitle_nombreTipoDocumento}" required="true" requiredMessage="#{bundle.CreateTipoDocumentoRequiredMessage_nombreTipoDocumento}"/>
+                    <p:message id="nombreTipoDocumento" for="nombreTipoDocumento" />              
+                </h:panelGrid>
+                    </center>
+                <br />
+                <center>
+                <p:commandButton action="#{tipoDocumentoController.create}" value="#{bundle.CreateTipoDocumentoSaveLink}"
+                                 process="@this, idTipoDocumento, nombreTipoDocumento "
+                                 update="idTipoDocumentomessage,nombreTipoDocumentomessage, formulario, :msgs "/>
+                <br />
+                <br />
+                <p:commandButton action="#{tipoDocumentoController.prepareList}" value="#{bundle.CreateTipoDocumentoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <p:button outcome="/index" value="#{bundle.CreateTipoDocumentoIndexLink}"/>
+                </center>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
+ 

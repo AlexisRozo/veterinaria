@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title"> veterinaria</ui:insert></title>
+<h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+
+    <h:body>
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+        <h1>
+            <ui:insert name="title">Default Title</ui:insert>
+        </h1>
+        </p:layoutUnit>
+        
+        <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+           
+              alexis valencia<br></br>
+              ravalencia1@misena.edu.co<br></br>
+              lesli vanessa<br></br>
+              vane@misena.edu.co<br></br>
+              shirley rivas<br></br>
+              dsrivas@misena.edu.co<br></br>
+        </p:layoutUnit>
+               
+              <p:layoutUnit position="west" size="175" header="Left" collapsible="true">
+                <p:menu>
+                    
+                        <p:menuitem value="Cliente" url="http://localhost:8080/veterinaria/faces/clase/cliente/List.xhtml"/>
+                   
+                    
+                        <p:menuitem value="Detallefactura" url="http://localhost:8080/veterinaria/faces/clase/detalleFactura/List.xhtml" />
+                   
+                    
+                        <p:menuitem value="Factura" url="http://localhost:8080/veterinaria/faces/clase/factura/List.xhtml"/>
+                    
+                   
+                        <p:menuitem value="Mascota" url="http://localhost:8080/veterinaria/faces/clase/mascota/List.xhtml"/>
+                    
+                    
+                        <p:menuitem value="Servicio" url="http://localhost:8080/veterinaria/faces/clase/servicio/List.xhtml"/>
+                  
+                    
+                        <p:menuitem value="TipoDocumento" url="http://localhost:8080/veterinaria/faces/clase/tipoDocumento/List.xhtml"/>
+                   
+                        
+
+                </p:menu>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+                <p>
+                    <ui:insert name="body">Default Body</ui:insert>
+                </p>
+            </p:layoutUnit>
+
+        </p:layout>
+
+    </h:body>
+</html>
